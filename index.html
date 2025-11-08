@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Postly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="dark overflow-auto">
+  <!-- header section -->
+  <header class="px-6 md:px-0">
+    <div class="flex justify-between py-10 mx-auto md:max-w-[1200px]">
+      <div class="flex justify-center items-center">
+        <div class="text-3xl font-bold bgx3">⬡</div>
+        <div class="text-xl font-bold bgx3">Postly</div>
+      </div>
+
+      <div class="flex justify-center items-center">
+        <a class="mr-5 text-lg hover:underline" href="https://posthyve.com/">Go to Posthyve.com
+        </a>
+        <button class="mr-5 hover:scale-110"><img src="Images/moon-icon-png.webp" alt="" id="dark-light-mode"
+            class=" w-[30px] cursor-pointer"></i></button>
+
+        <button class="bg-gray-300 bgx h-[48px] w-[48px] flex items-center rounded-md Btnx" id="Btn">
+          <div id="hamburger" class="relative cursor-pointer h-3 w-6">
+            <span
+              class="line top w-[24px] h-[2px] bgx4 bg-slate-900 transition-all duration-200 ease-in-out absolute left-[12px] bg-black rounded-[2px] "></span>
+            <span
+              class="line bottom w-[24px] h-[2px] bgx4  bg-slate-900 transition-all duration-200 ease-in-out absolute left-[12px] bg-black rounded-[2px]"></span>
+          </div>
+        </button>
+
+      </div>
+    </div>
+    <!-------------------------------------------modal --------------------------------------------->
+    <div id="modalopen"
+      class="modalopen page-animate hidden absolute text-white bg-[#27272A] flex flex-col z-50 min-w-[8rem] overflow-hidden border p-1 shadow-md w-56 bg-zinc-800 text-white mt-4 rounded-lg lg:right-[150px] right-5 top-[100px] "
+      style="transform: none; transition: all 1s linear ease-in ;">
+      <a class="hover:underline hover:text-black p-2 page-animate " href="#">Home</a>
+      <a class="hover:underline hover:text-black p-2 page-animate" href="#">How it Works</a>
+      <a class="hover:underline hover:text-black p-2 page-animate" href="#">Features</a>
+      <a class="hover:underline hover:text-black p-2 page-animate" href="#">Pricing</a>
+      <a class="hover:underline hover:text-black p-2 page-animate" href="#">Blogs</a>
+      <a class="hover:underline hover:text-black p-2 page-animate" href="#">FAQs</a>
+      <a class="hover:underline hover:text-black p-2 page-animate" href="#">Contact</a>
+    </div>
+  </header>
+
+  <!-- hero section -->
+  <div class="scroll-animate relative py-24 lg:py-10 px-6 mx-auto md:max-w-[1200px] my-2 overflow-hidden" style="opacity: 1; transform: none;">
+    <div
+      class="relative container md:max-w-[1200px] mx-auto bg-zinc-200 bgx bg-opacity-0.5 overflow-hidden rounded-3xl py-20 lg:py-36 px-10"
+      style="opacity: 1; transform: none">
+      <div class="relative md:px-0 overflow-hidden w-full max-w-200">
+        <h1 class="text-3xl md:text-7xl font-bold leading-19" style="opacity: 1; transform: none">
+             Your AI-Powered
+          <span class="text-primary text-[#a954f7]">Design</span>
+          Assistant
+        </h1>
+        <p class="text-lg text-secondary-content max-w-lg mt-1 leading-tight mb-8" style="opacity: 1; transform: none">
+            Unlock your creative potential. Seamlessly generate, customize, and
+          perfect your designs with cutting-edge AI technology.</p>
+        <div class="flex items-center justify-start gap-4" style="opacity: 1; transform: none">
+          <button class="w-[137.5px] h-[40px] bg-[#a954f7] text-white rounded-[10px]">
+            Get Started
+          </button>
+            <a target="_blank" class="hover:underline" href="https://Posthyve.com">Go to Posthyve.com
+          </a>
+        </div>
+      </div>
+      <div class="absolute bottom-[-45%] lg:bottom-[-32%] right-[-8%] overflow-hidden"
+        style="opacity: 1; transform: none">
+        <img class="lg:w-[610px] w-[250px]" src="Images/hero-img.png" />
+      </div>
+    </div>
+  </div>
+
+  <!-- marquee section -->
+  <div class="scroll-animate container mx-auto md:max-w-[1200px]">
+    <div class="relative flex w-full flex-col items-center justify-center overflow-hidden">
+      <div class="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:20s]">
+        <div class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row">
+          <div class="bg-[#27272A] p-[16px] w-[256px] h-[72.24px] rounded-xl flex items-center justify-center">
+            <img src="Images/logo-ispum-1.avif" class="w-[180px] h-[32.7px]" />
+          </div>
+          <div class="bg-[#27272A] p-[16px] w-[256px] h-[72.24px] rounded-xl flex items-center justify-center">
+            <img src="Images/logo-ispum-2.avif" class="w-[180px] h-[32.7px]" />
+          </div>
+          <div class="bg-[#27272A] p-[16px] w-[256px] h-[72.24px] rounded-xl flex items-center justify-center">
+            <img src="Images/logo-ispum-3.avif" class="w-[180px] h-[32.7px]" />
+          </div>
+        </div>
+        <div class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row">
+          <div class="bg-[#27272A] p-[16px] w-[256px] h-[72.24px] rounded-xl flex items-center justify-center">
+            <img src="Images/logo-ispum-1.avif" class="w-[180px] h-[32.7px]" />
+          </div>
+          <div class="bg-[#27272A] p-[16px] w-[256px] h-[72.24px] rounded-xl flex items-center justify-center">
+            <img src="Images/logo-ispum-2.avif" class="w-[180px] h-[32.7px]" />
+          </div>
+          <div class="bg-[#27272A] p-[16px] w-[256px] h-[72.24px] rounded-xl flex items-center justify-center">
+            <img src="Images/logo-ispum-3.avif" class="w-[180px] h-[32.7px]" />
+          </div>
+        </div>
+        <div class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row">
+          <div class="bg-[#27272A] p-[16px] w-[256px] h-[72.24px] rounded-xl flex items-center justify-center">
+            <img src="Images/logo-ispum-1.avif" class="w-[180px] h-[32.7px]" />
+          </div>
+          <div class="bg-[#27272A] p-[16px] w-[256px] h-[72.24px] rounded-xl flex items-center justify-center">
+            <img src="Images/logo-ispum-2.avif" class="w-[180px] h-[32.7px]" />
+          </div>
+          <div class="bg-[#27272A] p-[16px] w-[256px] h-[72.24px] rounded-xl flex items-center justify-center">
+            <img src="Images/logo-ispum-3.avif" class="w-[180px] h-[32.7px]" />
+          </div>
+        </div>
+        <div class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row">
+          <div class="bg-[#27272A] p-[16px] w-[256px] h-[72.24px] rounded-xl flex items-center justify-center">
+            <img src="Images/logo-ispum-1.avif" class="w-[180px] h-[32.7px]" />
+          </div>
+          <div class="bg-[#27272A] p-[16px] w-[256px] h-[72.24px] rounded-xl flex items-center justify-center">
+            <img src="Images/logo-ispum-2.avif" class="w-[180px] h-[32.7px]" />
+          </div>
+          <div class="bg-[#27272A] p-[16px] w-[256px] h-[72.24px] rounded-xl flex items-center justify-center">
+            <img src="Images/logo-ispum-3.avif" class="w-[180px] h-[32.7px]" />
+          </div>
+        </div>
+      </div>
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white opa1 "></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white opa2 "></div>
+    </div>
+  </div>
+
+  <!-- unleash section -->
+  <div class="scroll-animate py-12 px-6 mt-20">
+    <div class="container mx-auto md:max-w-[1200px]">
+      <h1 class="text-4xl font-semibold md:text-6xl max-w-2xl leading-snug">
+        Unleash Your <span class="text-[#a954f7]">Creativity</span>
+      </h1>
+      <p class="text-lg text-secondary-content max-w-2xl mt-2 leading-tight">
+        Discover how our AI-Powered Design Assistant transforms your ideas
+        into stunning designs effortlessly. Follow these simple steps to turn
+        your vision into reality.
+      </p>
+      <div class=" bg-none grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
+        <div class=" bgx flex flex-col bg-zinc-200 rounded-2xl p-6">
+          <button class="bg-[#a954f7] rounded-full w-14 h-14"><i
+              class="fa-solid fa-arrow-up-from-bracket text-[#fff] text-2xl "></i></button>
+          <h3 class="text-4xl mt-10">Upload Brief</h3>
+          <p>Share your project details and let our AI grasp your vision.</p>
+        </div>
+        <div class="bgx flex flex-col bg-zinc-200 rounded-2xl p-6">
+          <button class="bg-[#a954f7] rounded-full w-14 h-14"><i
+              class="fa-regular fa-star text-[#fff] text-2xl "></i></button>
+          <h3 class="text-4xl mt-10">Generate Designs</h3>
+          <p>Watch as our AI crafts unique design ideas tailored to you.</p>
+        </div>
+        <div class="bgx flex flex-col bg-zinc-200 rounded-2xl p-6">
+          <button class="bg-[#a954f7] rounded-full w-14 h-14"> <i
+              class="fa-solid fa-rocket text-[#fff] text-2xl "></i></button>
+          <h3 class="text-4xl mt-10">Refine Creation</h3>
+          <p>Perfect your chosen concept with easy-to-use AI tools.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- high resolutin outputs -->
+  <div class="scroll-animate py-24 px-6 mx-auto md:max-w-[1200px]">
+    <div class="scroll-animate flex flex-col lg:flex-row  gap-50 mt-20">
+      <div>
+        <h2 class="text-4xl lg:text-5xl leading-snug font-semibold">High-Resolution Outputs</h2>
+        <p class="my-5 max-w-lg">
+          Download your final designs in high-resolution formats suitable for
+          print and digital use. Ensure your work looks professional and polished
+          in any medium.
+        </p>
+        <button class="w-[137.5px] h-[40px] bg-[#a954f7] text-white rounded-[10px]">Get Started</button>
+      </div>
+      <div>
+        <img src="Images/cta-multiple-1.avif" alt="" class="h-[471px]">
+      </div>
+    </div>
+    <div class="scroll-animate flex flex-col lg:flex-row gap-50 mt-20">
+      <div><img src="Images/cta-multiple-2.avif" alt="" class="h-[471px]"></div>
+      <div>
+        <h2 class="text-4xl lg:text-5xl leading-snug  font-semibold">Real-Time Collaboration</h2>
+        <p class="my-5 max-w-lg">
+          Seamlessly collaborate with your team in real-time. Share ideas, give feedback, and make edits together, no
+          matter where you are. </p>
+        <button class="w-[137.5px] h-[40px] bg-[#a954f7] text-white rounded-[10px]">Get Started</button>
+      </div>
+    </div>
+    <div class="scroll-animate flex flex-col lg:flex-row gap-50 mt-20 font-semibold">
+      <div>
+        <h2 class="text-4xl lg:text-5xl leading-snug">Advanced Scheduling Tools</h2>
+        <p class="my-5 max-w-lg">
+          Plan and schedule your design projects with ease. Use our scheduling tools to set deadlines, track milestones,
+          and ensure timely delivery of your design work.
+        </p>
+        <button class="w-[137.5px] h-[40px] bg-[#a954f7] text-white rounded-[10px]">Get Started</button>
+      </div>
+      <div><img src="Images/cta-multiple-1.avif" alt="" class="h-[471px]"></div>
+    </div>
+  </div>
+  <!-- Transforming Imagination into Reality -->
+  <div class="scroll-animate py-12 px-6 mt-20">
+    <div class="mx-auto md:max-w-[1200px]">
+      <h1 class=" font-semibold text-4xl lg:text-6xl max-w-2xl">Transforming Imagination into <span
+          class="text-primary text-[#a954f7]">Reality</span></h1>
+      <p class="max-w-lg my-5 ">Unlock the full potential of your creativity with our AI-powered design assistant.
+        Explore new
+        dimensions of design, from futuristic visuals to timeless craftsmanship, and witness how AI can turn your
+        wildest
+        ideas into stunning realities.</p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-5">
+        <div
+          class="bgx lg:col-span-2 bg-zinc-200 h-[324px] hover:bg-purple-500 hover:text-white rounded-2xl p-6 flex flex-col justify-between group2">
+          <div class="flex justify-between">
+            <p class="leading-tight w-100">Dive into the world of AI where design possibilities are limitless. Let the
+              cutting-edge technology
+              transform
+              your concepts into breathtaking visuals.</p>
+            <button class="bg-[#a954f7] rounded-full w-14 h-14  text-[#fff] text-2xl">&#8599;</button>
+          </div>
+          <div>
+            <h3 class="text-4xl font-semibold">Witness the Future</h3>
+          </div>
+        </div>
+
+        <div
+          class="lg:col-span-3 bgx bg-zinc-200 h-[324px] hover:bg-purple-500 hover:text-white rounded-2xl p-6 flex flex-col justify-between group2">
+          <div class="flex justify-between">
+            <p class=" leading-tight w-100">Step beyond the ordinary with designs that defy conventions. Our AI conjures
+              up imaginative visuals that
+              push the boundaries of creativity.</p>
+            <button class="bg-[#a954f7] rounded-full w-14 h-14 text-[#fff] text-2xl">&#8599;</button>
+          </div>
+          <div>
+            <h3 class="text-4xl font-semibold">Visualize the Impossible</h3>
+          </div>
+        </div>
+
+        <div
+          class="lg:col-span-2 bgx bg-zinc-200 h-[324px] hover:bg-purple-500 hover:text-white rounded-2xl p-6 flex flex-col justify-between group2">
+          <div class="flex justify-between">
+            <p class="leading-tight w-100">Experience the perfect blend of form and function. Our AI ensures that every
+              design not only looks stunning
+              but also serves its purpose flawlessly.</p>
+            <button class="bg-[#a954f7] rounded-full w-14 h-14 text-[#fff] text-2xl">&#8599;</button>
+          </div>
+          <div>
+            <h3 class="text-4xl font-semibold">Synergy and Style</h3>
+          </div>
+        </div>
+
+        <div
+          class="lg:col-span-2 bgx bg-zinc-200 h-[324px] hover:bg-purple-500 hover:text-white rounded-2xl p-6 flex flex-col justify-between group2">
+          <div class="flex justify-between">
+            <p class="leading-tight w-100">Embrace the elegance of meticulously crafted designs. Our AI polishes every
+              detail to bring a timeless
+              quality to your creative projects.</p>
+            <button class="bg-[#a954f7] rounded-full w-14 h-14 text-[#fff] text-2xl">&#8599;</button>
+          </div>
+          <div>
+            <h3 class="text-4xl font-semibold">Timeless Precision</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Affordable Plans for Every Need -->
+  <div class="scroll-animate container mx-auto md:max-w-[1200px] py-24 px-6">
+    <h1 class="font-semibold text-4xl lg:text-6xl max-w-2xl">Affordable Plans for <span class="text-purple-500">Every
+        Need</span></h1>
+    <p class="leading-tight">Choose the perfect plan for your design projects, from startups to enterprises. Our pricing
+      tiers are designed to offer flexibility and value, ensuring you get the most out of our AI-powered design
+      assistant.</p>
+    <div class="flex flex-row justify-center h-[20px] py-[24px] "><label class=" text-white  monthly opacity-[0.5]"
+        id="monthly">Monthly</label>
+      <div class="justify-center items-center flex mt-3 mx-2 transition-[0.2s]">
+        <input type="checkbox" id="check" class="hidden">
+        <label for="check"
+          class="bg-purple-500 w-[35px] h-[20px] rounded-[200px] cursor-pointer relative transition-[0.2s] switch"></label>
+      </div>
+      <label class="yearly text-white opacity-[0.5]" id="yearly">Yearly</label>
+    </div>
+
+    <!-- grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+      <!--Free -->
+      <div class="flex flex-col max-w-[638.4px] p-[24px] h-[532.3px] bg-zinc-200 rounded-[15px] bgx">
+        <h3 class="text-[12px]">FREE</h3>
+        <h1 class="text-4xl font-bold mt-2">$0/m</h1>
+        <p class="mt-1 text-[14px]">Billed Monthly</p>
+        <hr class="mt-2">
+        <!-- for card -->
+        <div class="flex flex-col justify-between h-3/4">
+          <div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check"></i>
+              <p>Basic AI-generated designs</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check"></i>
+              <p>Access to customization tools</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check"></i>
+              <p>Standard templates library</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check"></i>
+              <p>5 projects per month</p>
+            </div>
+          </div>
+          <button
+            class="flex justify-center items-center h-[36px] text-[14px] py-[8px] px-[16px] border border-purple-500 rounded-[10px] text-purple-500">Get
+            Started</button>
+        </div>
+
+
+
+      </div>
+      <!--Basic-->
+      <div class=" flex flex-col max-w-[638.4px] p-[24px] h-[532.3px] bg-purple-500 text-white rounded-[15px]">
+        <h3 class="text-[12px]">Basic</h3>
+        <h1 class="text-4xl font-bold mt-2">$14.99/m</h1>
+        <p class="mt-1 text-[14px]">Billed Monthly</p>
+        <hr class="mt-2">
+        <!-- for card -->
+        <div class="flex flex-col justify-between h-3/4">
+          <div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check"></i>
+              <p>Advanced AI-generated designs</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check"></i>
+              <p>Full access to customization tools</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check"></i>
+              <p>Premium templates library</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check"></i>
+              <p>Unlimited projects</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check"></i>
+              <p>Real-time collaboration</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check"></i>
+              <p>Priority email support</p>
+            </div>
+          </div>
+          <button
+            class="flex justify-center items-center bg-white h-[36px] py-[8px] px-[16px] rounded-[10px] text-black text-[14px]">Get
+            Started</button>
+        </div>
+      </div>
+      <!--Pro-->
+      <div class="bgx flex flex-col max-w-[638.4px] p-[24px] h-[532.3px] bg-zinc-200 rounded-[15px]">
+        <h3 class="text-[12px]">PRO</h3>
+        <h1 class="text-4xl font-bold mt-2">$29.99/m</h1>
+        <p class="mt-1 text-[14px]">Billed Monthly</p>
+        <hr class="mt-6">
+        <!-- for card -->
+        <div class="flex flex-col justify-between h-3/4">
+          <div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check mr-2"></i>
+              <p>Basic AI-generated designs</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check mr-2"></i>
+              <p>Dedicated account manager</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check mr-2"></i>
+              <p>Custom AI solutions and designs</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check mr-2"></i>
+              <p>Onboarding and training sessions</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check mr-2"></i>
+              <p>24/7 priority support</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check mr-2"></i>
+              <p>Advanced analytics and reporting</p>
+            </div>
+            <div class="flex items-center mt-4 text-[14px]"><i class="fa-regular fa-circle-check mr-2"></i>
+              <p>Secure cloud storage</p>
+            </div>
+          </div>
+          <button
+            class="flex justify-center items-center h-[36px] py-[8px] px-[16px] border border-purple-500 rounded-[10px] text-purple-500 text-[14px]">Get
+            Started</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- semless tool integration -->
+  <div class="scroll-animate flex justify-center px-6 md:px-0 ">
+    <div
+      class="bgx h-[845px] overflow-hidden rounded-3xl lg:h-[500px] lg:w-[1200px] w-[582.4px] bg-zinc-200 py-12 px-10 lg:py-2 mt-20 flex flex-col justify-center items-center lg:flex-row">
+      <div>
+        <h1 class="font-semibold text-4xl lg:text-6xl lg:w-2/3">Seamless Tool <span
+            class="text-purple-500">Integration</span></h1>
+        <p class="leading-tight mb-8 max-w-lg text-lg">NajmAI offers seamless integration with a variety of popular
+          design and project
+          management tools, ensuring a smooth and efficient workflow.</p>
+      </div>
+      <div class="flex flex-row h-[500px] gap-2 lg:gap-8 py-12 lg:py-2 items-center justify-center overflow-hidden">
+
+        <div class=" w-[112px] flex flex-col justify-center items-center overflow-hidden relative ">
+          <div class="flex flex-col justify-center items-center animate-scroll-down">
+            <img src="Images/logo-v-ispum-1.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-2.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-3.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-4.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-5.avif" alt="" class="w-[50px] h-[50px] mt-10">
+          </div>
+          <div class="flex flex-col justify-center items-center animate-scroll-down">
+            <img src="Images/logo-v-ispum-1.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-2.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-3.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-4.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-5.avif" alt="" class="w-[50px] h-[50px] mt-10">
+          </div>
+          <div class="flex flex-col justify-center items-center animate-scroll-down">
+            <img src="Images/logo-v-ispum-1.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-2.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-3.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-4.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-5.avif" alt="" class="w-[50px] h-[50px] mt-10">
+          </div>
+          <div class="flex flex-col justify-center items-center animate-scroll-down"><img
+              src="Images/logo-v-ispum-1.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-2.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-3.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-4.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-5.avif" alt="" class="w-[50px] h-[50px] mt-10">
+          </div>
+
+        </div>
+
+        <div class=" w-[112px] flex flex-col justify-center items-center overflow-hidden relative ">
+          <div class="flex flex-col justify-center items-center animate-scroll-up">
+            <img src="Images/logo-v-ispum-1.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-2.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-3.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-4.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-5.avif" alt="" class="w-[50px] h-[50px] mt-10">
+          </div>
+          <div class="flex flex-col justify-center items-center animate-scroll-up">
+            <img src="Images/logo-v-ispum-1.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-2.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-3.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-4.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-5.avif" alt="" class="w-[50px] h-[50px] mt-10">
+          </div>
+          <div class="flex flex-col justify-center items-center animate-scroll-up">
+            <img src="Images/logo-v-ispum-1.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-2.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-3.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-4.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-5.avif" alt="" class="w-[50px] h-[50px] mt-10">
+          </div>
+          <div class="flex flex-col justify-center items-center animate-scroll-up"><img src="Images/logo-v-ispum-1.avif"
+              alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-2.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-3.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-4.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-5.avif" alt="" class="w-[50px] h-[50px] mt-10">
+          </div>
+
+        </div>
+
+        <div class=" w-[112px] flex flex-col justify-center items-center overflow-hidden relative ">
+          <div class="flex flex-col justify-center items-center animate-scroll-down">
+            <img src="Images/logo-v-ispum-1.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-2.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-3.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-4.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-5.avif" alt="" class="w-[50px] h-[50px] mt-10">
+          </div>
+          <div class="flex flex-col justify-center items-center animate-scroll-down">
+            <img src="Images/logo-v-ispum-1.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-2.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-3.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-4.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-5.avif" alt="" class="w-[50px] h-[50px] mt-10">
+          </div>
+          <div class="flex flex-col justify-center items-center animate-scroll-down">
+            <img src="Images/logo-v-ispum-1.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-2.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-3.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-4.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-5.avif" alt="" class="w-[50px] h-[50px] mt-10">
+          </div>
+          <div class="flex flex-col justify-center items-center animate-scroll-down"><img
+              src="Images/logo-v-ispum-1.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-2.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-3.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-4.avif" alt="" class="w-[50px] h-[50px] mt-10">
+            <img src="Images/logo-v-ispum-5.avif" alt="" class="w-[50px] h-[50px] mt-10">
+          </div>
+
+        </div>
+        <!-- <div class="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-zinc-200 dark:from-zinc-800"></div>
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-zinc-200 dark:from-zinc-800"></div> -->
+      </div>
+    </div>
+  </div>
+  <!-- Customer Success Stories -->
+  <div class="scroll-animate py-12 px-6 mt-20">
+    <div class="container mx-auto md:max-w-[1200px]">
+      <h1 class="font-semibold text-4xl lg:text-6xl max-w-2xl mt-10">Customer Success <span
+          class="text-purple-500">Stories</span></h1>
+      <p class="text-lg text-secondary-content max-w-2xl mt-2 leading-tight">Discover how our platform has helped
+        businesses create outstanding content effortlessly. Hear directly from our users about their success and
+        satisfaction.</p>
+    </div>
+    <div class="flex  justify-end text-white my-8 mr-30">
+      <button class="bg-purple-400 rounded-full p-5 mr-5 h-3 w-5 flex justify-center items-center"><i
+          class="fa-solid fa-arrow-left text-[24px]"></i></button>
+      <button class="bg-purple-400 rounded-full p-5 mr-5 h-3 w-5 flex justify-center items-center"><i
+          class="fa-solid fa-arrow-right text-[24px] "></i></button>
+    </div>
+    <div class="overflow-hidden">
+      <div class="flex flex-row gap-2">
+        <div class="bg-zinc-200 bgx rounded-3xl p-6 flex-shrink-0 w-1/2 lg:w-1/4" style="opacity: 1;transform: none; ">
+          <div class="flex flex-row items-center"><img src="Images/james.png" alt=""
+              class="h-12 w-12 rounded-full mr-2">
+            <h3 class="font-medium text-lg">James K.</h3>
+          </div>
+          <p class="leading-tight mt-2 ">I was skeptical at first, but this AI assistant exceeded all my expectations.
+            It's easy to use and delivers professional-grade designs effortlessly.</p>
+          <div>
+          </div>
+        </div>
+        <div class="bg-zinc-200 bgx rounded-3xl p-6 flex-shrink-0 w-1/2 lg:w-1/4" style="opacity: 1;transform: none;">
+          <div class="flex flex-row items-center"><img src="Images/james.png" alt=""
+              class="h-12 w-12 rounded-full mr-2">
+            <h3 class="font-medium text-lg">James K.</h3>
+          </div>
+          <p class="leading-tight mt-2">I was skeptical at first, but this AI assistant exceeded all my expectations.
+            It's easy to use and delivers professional-grade designs effortlessly.</p>
+          <div>
+          </div>
+        </div>
+        <div class="bg-zinc-200 bgx rounded-3xl p-6 flex-shrink-0 w-1/2 lg:w-1/4" style="opacity: 1;transform: none;">
+          <div class="flex flex-row items-center"><img src="Images/james.png" alt=""
+              class="h-12 w-12 rounded-full mr-2">
+            <h3 class="font-medium text-lg">James K.</h3>
+          </div>
+          <p class="leading-tight mt-2">I was skeptical at first, but this AI assistant exceeded all my expectations.
+            It's easy to use and delivers professional-grade designs effortlessly.</p>
+          <div>
+          </div>
+        </div>
+        <div class="bg-zinc-200 bgx rounded-3xl p-6 flex-shrink-0 w-1/2 lg:w-1/4" style="opacity: 1;transform: none;">
+          <div class="flex flex-row items-center"><img src="Images/james.png" alt=""
+              class="h-12 w-12 rounded-full mr-2">
+            <h3 class="font-medium text-lg">James K.</h3>
+          </div>
+          <p class="leading-tight mt-2">I was skeptical at first, but this AI assistant exceeded all my expectations.
+            It's easy to use and delivers professional-grade designs effortlessly.</p>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- frequently ask questions -->
+  <div class="px-6 md:px-0 scroll-animate">
+    <div
+      class="bgx flex lg:flex-row flex-col relative container md:max-w-[1200px] mx-auto bg-zinc-200 bg-opacity-0.5 overflow-hidden rounded-3xl px-10 py-12"
+      style="opacity: 1; transform: none">
+      <div class="flex flex-col justify-start">
+        <h1 class="font-semibold text-4xl lg:text-6xl max-w-2xl mt-10">Frequently Asked <span
+            class="text-purple-500">Questions</span></h1>
+        <p class="text-lg text-secondary-content max-w-2xl mt-2 leading-tight ">Have questions about our AI-Powered
+          Design
+          Assistant? Find answers to the most common questions and learn how our platform can enhance your creative
+          process.
+        </p>
+      </div>
+      <div class="py-12 lg:py-2 lg:w-[560px] w-fit ">
+        <div class="border-b border-zinc-80 py-4">
+          <button class="font-bold cursor-pointer pahila flex text-start" id="pahila">How does the AI generate
+            designs?</button>
+          <p class="hidden pahila-paragraph" id="pahila-paragraph">Our AI analyzes your design brief and uses advanced
+            algorithms to generate multiple design concepts tailored to your specifications. It takes into account your
+            preferences, style, and project requirements to deliver unique and high-quality designs.</p>
+        </div>
+        <div class="border-b border-zinc-80 py-4">
+          <button class="font-bold cursor-pointer dusra text-start" id="dusra">Can I customize the AI-generated
+            designs?</button>
+          <p class="hidden dusra-paragraph" id="dusra-paragraph">Yes, our platform includes powerful customization tools
+            that allow you to refine and perfect your chosen designs. You can make adjustments, add elements, and tweak
+            details to ensure the final design matches your vision.</p>
+        </div>
+        <div class="border-b border-zinc-80 py-4">
+          <button class="font-bold cursor-pointer tisra text-start" id="tisra">What support options are
+            available?</button>
+          <p class="hidden tisra-paragraph">We offer comprehensive support for all our plans. Starter users have access
+            to
+            email support,
+            Pro users benefit from priority email support, and Enterprise users receive 24/7 priority support along with
+            a
+            dedicated account manager.</p>
+        </div>
+        <div class="border-b border-zinc-80 py-4">
+          <button class="font-bold cursor-pointer chautha text-start" id="chautha">Is there a free trial
+            available?</button>
+          <p class="hidden chautha-paragraph">Yes, we offer a 14-day free trial for all new users. You can explore all
+            the
+            features of our
+            AI-powered design assistant and see how it can enhance your creative process before committing to a
+            subscription.</p>
+        </div>
+        <div class="border-b border-zinc-80 py-4">
+          <button class="font-bold cursor-pointer panchva text-start" id="panchva">How secure is my data?</button>
+          <p class="hidden panchva-paragraph">We prioritize the security of your data. All your designs and project
+            details are stored in
+            secure cloud storage with advanced encryption. Enterprise users have access to enhanced security options for
+            added peace of mind.</p>
+        </div>
+        <div class="border-b border-zinc-80 py-4 text-start">
+          <button class="font-bold cursor-pointer chatha" id="chatha">What integrations are available?</button>
+          <p class="hidden chatha-paragarph">Our platform seamlessly integrates with popular design and project
+            management
+            tools such as
+            Adobe Creative Suite, Figma, and Trello. This allows you to streamline your workflow and easily incorporate
+            our
+            AI-powered design assistant into your existing processes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Stay Inspired with Our Latest Insights -->
+
+  <div class="relative py-24 px-6 mx-auto scroll-animate md:max-w-[1200px]">
+    <div>
+      <h1 class="font-semibold text-4xl lg:text-6xl max-w-2xl mt-10">Stay Inspired with Our Latest <span
+          class="text-purple-500">Insights</span></h1>
+      <p class="leading-tight text-secondary-content">Dive into our blog for the latest trends, tips, and insights in
+        the world of design and AI technology. Whether you’re looking for inspiration, tutorials, or industry news, our
+        articles are crafted to keep you informed and inspired.</p>
+    </div>
+
+    <!-- card syay inspirec -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-10">
+      <div class="overflow-hidden rounded-lg bg-zinc-200 bgx">
+        <div class="relative overflow-hidden group">
+          <img src="Images/blog-img-1.avif" alt="Blog image"
+            class="object-cover w-full h-48 transition-transform duration-300 ease-in-out group-hover:scale-110" />
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between">
+            <p>Apr 8, 2022</p>
+            <p>6 min read</p>
+          </div>
+          <h1 class="text-2xl font-semibold mt-2 text-gray-900">
+            Starting and Growing a Career in Web Design
+          </h1>
+        </div>
+      </div>
+
+      <div class=" overflow-hidden  rounded-lg bg-zinc-200 bgx" style="transform: none; opacity: 1;">
+        <div class="relative overflow-hidden group">
+          <img src="Images/blog-img-2.avif" alt=""
+            class="object-cover w-full h-48 transition-transform duration-300 ease-in-out group-hover:scale-110">
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between">
+            <p>Mar 15, 2022</p>
+            <p>5 min read</p>
+          </div>
+          <h1 class="text-2xl font-semibold">Create a Landing Page That Performs Great</h1>
+        </div>
+      </div>
+      <div class=" overflow-hidden rounded-lg bg-zinc-200 bgx" style="transform: none; opacity: 1;">
+        <div class="object-cover group relative overflow-hidden"><img src="Images/blog-img-3.avif" alt=""
+            class="object-cover w-full h-48 transition-transform duration-300 ease-in-out group-hover:scale-110">
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between">
+            <p>Feb 22, 2022</p>
+            <p>7 min read</p>
+          </div>
+          <h1 class="text-2xl font-semibold">How Can Designers Prepare for the Future?</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- alone button -->
+  <div class="flex justify-center items-center my-6 scroll-animate">
+    <button class="w-[137.5px] h-[40px] bg-[#a954f7] text-white rounded-[10px]">
+      Get Started
+    </button>
+  </div>
+  <!-- hero section 2 -->
+  <div class="relative py-24 px-6 mx-auto md:max-w-[1200px] my-2 scroll-animate overflow-hidden" style="opacity: 1; transform: none">
+    <div
+      class="relative container md:max-w-[1200px] mx-auto bg-zinc-200 bgx bg-opacity-0.5 overflow-hidden rounded-3xl py-20 px-10"
+      style="opacity: 1; transform: none">
+      <div class="relative md:px-0 overflow-hidden w-full max-w-200">
+        <h1 class="text-3xl md:text-7xl font-bold leading-19" style="opacity: 1; transform: none">
+          Start Your Design
+          <span class="text-primary text-[#a954f7]">Journey</span>
+        </h1>
+        <p class="text-lg text-secondary-content max-w-lg mt-1 leading-tight mb-8" style="opacity: 1; transform: none">
+          Sign up now and experience the power of AI-driven design without any commitment.
+        </p>
+        <div class="flex items-center justify-start gap-4" style="opacity: 1; transform: none">
+          <button class="w-[137.5px] h-[40px] bg-[#a954f7] text-white rounded-[10px]">
+            Get Started
+          </button>
+        </div>
+      </div>
+      <div class="absolute bottom-[-45%] lg:bottom-[-32%] right-[-8%] overflow-hidden"
+        style="opacity: 1; transform: none">
+        <img class="lg:w-[610px] w-[250px]" src="Images/hero-img.png" />
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <div class="py-16 mt-20 bg-zinc-200 mx-auto px-4 bgx2">
+      <div class="flex flex-col lg:flex-row justify-between gap-2 py-12">
+        <div class="flex justify-center items-center mt">
+          <div class="text-3xl font-bold bgx3">⬡</div>
+          <div class="text-xl font-bold bgx3">Postly</div>
+        </div>
+        <div class="flex flex-wrap gap-4 justify-evenly text-center">
+          <a class="hover:underline text-lg " href="https://postly-live.vercel.app/how-it-works">How it Works</a>
+          <a class="hover:underline text-lg" href="https://postly-live.vercel.app/features">Features</a>
+          <a class="hover:underline text-lg" href="https://postly-live.vercel.app/pricing">pricing</a>
+          <a class="hover:underline text-lg" href="https://postly-live.vercel.app/blog">Blog</a>
+          <a class="hover:underline text-lg" href="https://postly-live.vercel.app/faqs">FAQs</a>
+          <a class="hover:underline text-lg" href="https://postly-live.vercel.app/contact">Contact</a>
+        </div>
+      </div>
+      <hr class="opacity-[0.1] mt-2">
+      <div class="flex flex-wrap text-center justify-between mt-4  text-[0.85rem] ">
+        <div><a href="https://posthyve.com/">Template by Posthyve.com</a></div>
+        <div class="opacity-[0.4] flex flex-shrink-0">
+          <a class="hover:underline pr-5" href="#">Privacy Policy</a>
+          <a class="hover:underline" href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

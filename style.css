@@ -1,0 +1,178 @@
+body {
+  font-family: "Outfit", sans-serif;
+}
+/* page  */
+.page-animate {
+  animation: fadeSlide 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* scroll animation */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+
+.scroll-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dark {
+  background-color: #1d1c1a;
+
+  p,
+  a {
+    color: #fff;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: white;
+  }
+
+  .bgx {
+    background-color: rgb(39 39 42);
+  }
+
+  .bgx2 {
+    background-color: #26262a;
+  }
+
+  .pahila,
+  .dusra,
+  .tisra,
+  .chautha,
+  .panchva,
+  .chatha {
+    color: white;
+  }
+
+  .bgx3 {
+    color: #fff;
+  }
+
+  .bgx4 {
+    background-color: #fff;
+  }
+
+  .group2:hover {
+    background-color: #9C27B0;
+  }
+
+  .opa1 {
+    background: linear-gradient(to right, #1d1c1a, transparent);
+  }
+
+  .opa2 {
+    background: linear-gradient(to left, #1d1c1a, transparent);
+  }
+
+}
+
+/* Lines' default positions------------------------------------------- */
+.line.top {
+  top: 0;
+}
+
+.line.bottom {
+  bottom: 0;
+}
+
+.hamburger-open .line.top {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-open .line.bottom {
+  transform: rotate(-45deg) translate(2px, -2px);
+}
+
+.modalopen.open {
+  display: block;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* switch -------------------------------------------------*/
+
+.switch::before {
+  position: absolute;
+  background: #fff;
+  content: '';
+  width: 17px;
+  height: 17px;
+  margin: 1px;
+  border-radius: 50px;
+  transition: all 0.1s ease;
+}
+
+#check:checked+.switch::before {
+  transform: translateX(15px);
+  transition: all 0.1s ease;
+}
+
+
+/* paragragh for hidden ------------------------------------------------------*/
+.pahila-paragraph.show,
+.dusra-paragraph.show,
+.tisra-paragraph.show,
+.chautha-paragraph.show,
+.panchva-paragraph.show,
+.chatha-paragraph.show {
+  display: block;
+}
+
+/* up and down animation--------------------------------------------- */
+@layer utilities {
+  @keyframes scroll-down {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes scroll-up {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  .animate-scroll-down {
+    animation: scroll-down 10s linear infinite;
+  }
+
+  .animate-scroll-up {
+    animation: scroll-up 10s linear infinite;
+  }
+}
+
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration, 20s) linear infinite;
+}
